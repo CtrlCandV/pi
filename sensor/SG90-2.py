@@ -14,7 +14,8 @@ p13 = GPIO.PWM(13, 50)
 p13.start(tonum(0))
 i=0
 num=5
-while True:
+try:
+    while True:
     i=i+num
     if i>180:
         i=180
@@ -24,3 +25,7 @@ while True:
         num=-num
     p13.ChangeDutyCycle(tonum(i))
     time.sleep(0.05)
+except Exception as err:
+    print(err)
+finally:
+    p13.stop()
