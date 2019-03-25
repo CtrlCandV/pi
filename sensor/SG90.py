@@ -15,5 +15,6 @@ while True:
     num=int(input("num:"))
     if num<0:
         exit()
+        p13.stop()
     else:
         p13.ChangeDutyCycle(tonum(num))
